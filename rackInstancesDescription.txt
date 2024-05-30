@@ -1,0 +1,58 @@
+
+# The instances for the rack formulation have the following format:
+
+N XXX   # (Number of distinct products)
+R XXX   # (Number of racks in warehouse)
+O XXX   # (Number of outstanding orders)
+
+RS XXX  # (Number of shelves in a rack, i.e. number of distinct products that fit
+           in a rack)
+
+Racks
+ Index Prod Qty ...
+ ...
+
+# In the racks section of the instance file, we show in each row:
+#  - The index of that rack (from 0 in the first row to R-1 in the last row)
+#  - Then we include RS times in each row:
+#     - The product identifier held in one of the shelves in that rack (from 0 to N-1)
+#     - The quantity of that product stored in that rack shelf.
+#
+# Example:
+# 
+# R  2
+# RS 3
+# 
+# Racks
+#   0  4  3  8  1 23  1
+#   1 96  2 10  4 61  2
+#
+# Above there are two racks (0 and 1, each containing 3 distinct products).
+# Rack 0 has 3 units of product 4, 1 unit of product 8 and 1 unit of product 23
+# Rack 1 has 2 units of product 96, 4 units of product 10 and 2 units of product 61
+
+
+Orders
+ Index Qty Prod Prod Prod ...
+ ...
+
+
+# In the orders section of the instance file, we show in each row:
+#  - The index of that order (from 0 in the first row to O-1 in the last row)
+#  - The number of items Qty requested in that order
+#  - Then we include Qty product identifiers.
+#    - Notice that if there are repeated products in an order the same
+#      identifier can appear more than once
+#
+# Example:
+#
+# O 2
+#
+# Orders
+# 0 3 7 15 15
+# 1 4 9 9 11 11
+# 
+# In the example above, there are 2 outstanding orders.
+# Order 0 requires 3 products, 1 unit of product 7 and 2 units of product 15
+# Order 1 requires 4 products, 2 units of product 9 and 2 units of product 11
+

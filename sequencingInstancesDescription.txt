@@ -1,0 +1,35 @@
+
+# To explain the format of the instances for the sequencing formulation
+#    we use the example below
+
+Original instance: instance_N400_R100_O100_RS25
+
+O 70
+R 11
+
+Orders:
+    1    2    4    6    7    8   11   12   13   14
+   16   17   18   19   20   22   25   27   28   30
+   32   33   35   36   37   38   39   40   41   42
+   43   45   46   48   49   51   52   53   54   55
+   57   60   62   63   64   65   66   69   71   72
+   73   74   75   76   78   80   81   84   85   86
+   87   88   90   91   92   94   95   96   97   99
+
+Racks:
+    6    7   22   48   52   57   60   64   78   87
+   88
+
+
+# The sequencing formulation requires information about the contents of each
+# rack and products required in each order. This information can be found in 
+# the corresponding rack formulation instances, whose file is referred in the 
+# line the first line of the sequencing instance file ((Original instance).
+#
+# The instance above includes sequencing 70 orders that can be picked from 11
+# R XXX
+# racks
+#
+# The list of 70 orders to be picked is given next (1, 2, 4, ..., 97, 99)
+#
+# The list of 11 racks to be sequenced is given next (6, 7, 22, ..., 87, 88)
